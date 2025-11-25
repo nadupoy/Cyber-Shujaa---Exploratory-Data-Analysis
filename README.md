@@ -96,14 +96,22 @@ and explore:
 
 ### What I learned 🧠
 
-**1. Accessing a group of rows and columns using `DataFrame.loc`.**
+**1. Accessing a group of rows and columns using [`DataFrame.loc()`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.loc.html#pandas.DataFrame.loc).**
 
 I wanted to access and view the empty values in different columns as a `DataFrame` to asses their relevance.
 
-[`DataFrame.loc()`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.loc.html#pandas.DataFrame.loc) enabled me to do this:
-
 ```python
 titanic_dataset.loc[titanic_dataset['Embarked'].isna() == True]
+
+```
+
+**2. Replacing values in a column using [`DataFrame.replace()`](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.replace.html).**
+
+```python
+titanic_dataset['Survived'] = titanic_dataset['Survived'].replace({
+  0: 'No',
+  1: 'Yes'
+})
 
 ```
 
